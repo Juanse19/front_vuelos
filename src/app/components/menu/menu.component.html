@@ -1,0 +1,43 @@
+<mat-toolbar color="primary">
+  <span>
+      <a routerLink="" mat-button>
+          <mat-icon><span class="material-icons">
+            flight_takeoff
+            </span></mat-icon> Gestion Vuelos
+      </a>
+  </span>
+
+  <!-- <div>
+      <a mat-button routerLink="peliculas/buscar">
+          <mat-icon>search</mat-icon>Buscar vuelos
+      </a>
+  </div> -->
+
+  <app-autorizado [rol]="'Admin'">
+      <ng-container autorizado>
+
+          <div>
+              <a mat-button routerLink="flight">Asignar vuelo</a>
+          </div>
+
+
+      </ng-container>
+  </app-autorizado>
+
+
+
+  <div class="espacio"></div>
+
+  <app-autorizado>
+      <ng-container autorizado>
+          <span>Hola, {{ seguridadService.obtenerCampoJWT('email') }} </span>
+          <a mat-button (click)="seguridadService.logout()">Cerrar sesión</a>
+      </ng-container>
+
+      <ng-container noAutorizado>
+          <a mat-button routerLink="login">Iniciar sesión</a>
+          <a mat-button routerLink="registro">Registro</a>
+      </ng-container>
+  </app-autorizado>
+
+</mat-toolbar>

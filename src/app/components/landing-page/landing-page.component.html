@@ -1,0 +1,16 @@
+<div class="container">
+  <mat-card>
+
+    <mat-card-actions>
+  <div class="control-section">
+    <ejs-gantt id="ganttDefault" #gantt [dataSource]="flights" [taskFields]="taskSettings" [dayWorkingTime]="dayWorkingTime"
+        [timelineSettings]="timelineSettings" [columns]="columns" [treeColumnIndex]="1" timezone="UTC" durationUnit="Hour" dateFormat="hh:mm a"
+        height="450px" [includeWeekend]="true">
+    </ejs-gantt>
+</div>
+</mat-card-actions>
+</mat-card>
+
+</div>
+
+

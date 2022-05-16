@@ -1,0 +1,78 @@
+<app-mostrar-errores [errores]="errores"></app-mostrar-errores>
+
+<br><br>
+<div class="control-section">
+  <div class="col-lg-12">
+    <div id='content' class='box-form' style="margin: -2.0rem -1.9rem -0.2rem 2.0rem; width: 200px; padding: -10px;">
+      <div class="control_wrapper" id="control_wrapper" style="margin: 15px auto;">
+        <form id="reactive" [formGroup]="formFlight" (submit)="guardar()">
+            <div class="form-group template">
+                    <div class="e-float-input">
+                        <input formControlName="flightNumber" type="text" id="flightNumber" name="flightNumber" class="required" required>
+                        <span class="e-float-line"></span>
+                        <label class="e-float-text" for="flightNumber">Vuelo</label>
+                    </div>
+
+                </div>
+
+                <div class="form-group template">
+                  <div class="e-float-input">
+                      <input formControlName="cityOrigin" type="text" id="cityOrigin" name="cityOrigin" class="required" required>
+                      <span class="e-float-line"></span>
+                      <label class="e-float-text" for="cityOrigin">Ciudad origen</label>
+                  </div>
+
+              </div>
+
+              <div class="form-group template">
+                <div class="e-float-input">
+                    <input formControlName="cityDestination" type="text" id="cityDestination" name="cityDestination" class="required" required>
+                    <span class="e-float-line"></span>
+                    <label class="e-float-text" for="cityDestination">Ciudad destino</label>
+                </div>
+
+            </div>
+
+              <div class="form-group template" >
+                  <div class="e-float-input" >
+                      <ejs-dropdownlist formControlName="airlineId" name="airlineId" value='value' [fields]='fields' [dataSource]='airline' placeholder="Airline" [allowFiltering]='true' floatLabelType='Auto' required>
+                      </ejs-dropdownlist>
+                  </div>
+
+              </div>
+              <div class="form-group template" >
+                  <div class="e-float-input" >
+                      <ejs-datetimepicker formControlName="departureTime" id="departureTime" class="e-field" data-name="departureTime" format="MM/dd/yyyy HH:mm:ss"  placeholder='Hora de inicio' floatLabelType='Always' required>
+                      </ejs-datetimepicker>
+
+                  </div>
+              </div>
+
+                <div class="form-group template" >
+                        <div class="e-float-input" >
+                            <ejs-datetimepicker formControlName="arrivalTime" id="arrivalTime" class="e-field" data-name="EndTime" format="MM/dd/yyyy HH:mm:ss" name="datetime" placeholder='Hora de finalización' floatLabelType='Always' required>
+                          </ejs-datetimepicker>
+                        </div>
+                </div>
+
+                <div class="form-group template" >
+                  <div class="e-float-input" >
+                  </div>
+          </div>
+
+          <div class="form-check">
+            <input class="form-check-input" formControlName="status" [(ngModel)]="checkBox" type="checkbox" value="" id="flexCheckChecked" checked>
+            <label class="form-check-label" for="flexCheckChecked">
+              Estado
+            </label>
+          </div>
+
+                    <br><br>
+                      <button mat-flat-button color="primary" [disabled]="formFlight.invalid">Guardar</button>
+                      <a mat-stroked-button routerLink="/flight">Cancelar</a>
+            </form>
+    </div>
+  </div>
+</div>
+</div>
+

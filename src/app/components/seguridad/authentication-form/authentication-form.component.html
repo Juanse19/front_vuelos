@@ -1,0 +1,14 @@
+
+<app-mostrar-errores [errores]="errores"></app-mostrar-errores>
+
+<div class="login-page">
+  <div class="form">
+    <h3>{{accion}}</h3>
+    <form class="login-form" (submit)="onSubmit.emit(formAuth.value)" [formGroup]="formAuth">
+      <input formControlName="email" type="text" placeholder="Email"/>
+      <input formControlName="password" type="password" placeholder="password"/>
+      <button [disabled]="formAuth.invalid">{{accion}}</button>
+      <p class="message"><a routerLink="/">Cancelar</a></p>
+    </form>
+  </div>
+</div>
